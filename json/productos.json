@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Futter Mane",
+    "description": "Pokémon Atacante especial de tipo Hada/Fantasma ",
+    "price": 5000,
+    "stock": 20,
+    "image": "/assets/imgs/Melenaleteo.png"
+  },
+  {
+    "id": 2,
+    "name": "Gardevoir",
+    "description": "Pokémon Psiquico/Hada introducido en la tercera generación",
+    "price": 1000,
+    "stock": 10,
+    "image": "/assets/imgs/gardevoir.png"
+  }
+]

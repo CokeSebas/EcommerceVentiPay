@@ -1,14 +1,26 @@
-// app.js
+require('dotenv').config();
+
 const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const usersRouter = require('./routes/user');
+const productsRouter = require('./routes/products');
+
 const app = express();
-const port = 3000; // Puedes elegir cualquier puerto
 
-// Ruta básica
-app.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
+app.use(cors());
 
-// Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+
+const PORT = process.env.PORT || 3000;
+
+// Middleware para parsear JSON
+app.use(bodyParser.json());
+
+// Usar el router de usuarios
+app.use('/api/users', usersRouter);
+app.use('/api/products', productsRouter);
+
+// Iniciar el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
