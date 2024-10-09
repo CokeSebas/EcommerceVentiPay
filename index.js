@@ -3,22 +3,35 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const usersRouter = require('./routes/user');
 const productsRouter = require('./routes/products');
+const checkoutRouter = require('./routes/checkout');
+const path = require('path');
 
 const app = express();
 
-app.use(cors());
 
+const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 3000;
+// Middleware 
+app.use(cors({
+  origin: 'http://localhost:3000' // Permitir solicitudes desde el frontend
+}));
 
-// Middleware para parsear JSON
 app.use(bodyParser.json());
 
-// Usar el router de usuarios
-app.use('/api/users', usersRouter);
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.use('/assets', express.static(path.join(__dirname, '/assets')));
+
 app.use('/api/products', productsRouter);
+app.use('/api/checkout', checkoutRouter);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
 
 // Iniciar el servidor
 app.listen(PORT, () => {

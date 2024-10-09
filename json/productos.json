@@ -14,5 +14,21 @@
     "price": 1000,
     "stock": 10,
     "image": "/assets/imgs/gardevoir.png"
+  },
+  {
+    "id": 3,
+    "name": "Primarina",
+    "description": "Pokémon Agua/Hada inicial de Septima Generación",
+    "price": 1500,
+    "stock": 10,
+    "image": "/assets/imgs/primarina.png"
+  },
+  {
+    "id": 4,
+    "name": "Dragapult",
+    "description": "Pokémon Dragon/Fantasma caracterizado por su gran ataque fisico",
+    "price": 3000,
+    "stock": 10,
+    "image": "/assets/imgs/dragapult.png"
   }
 ]
