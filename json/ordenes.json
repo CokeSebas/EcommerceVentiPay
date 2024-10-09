@@ -3,6 +3,10 @@
     {
       "amount": "1000",
       "currency": "clp"
+    },
+    {
+      "amount": "5000",
+      "currency": "clp"
     }
   ]
 }

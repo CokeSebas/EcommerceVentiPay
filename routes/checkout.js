@@ -10,12 +10,12 @@ router.post('/', async (req, res) => {
 
 router.post('/payment-success', async (req, res) => {
   await checkoutController.pagoExitoso(res, req.query);
-  res.redirect('http://localhost:3000/pago-exitoso/' + req.query.amount + '/' + req.query.currency);
+  res.redirect('http://localhost:5000/pago-exitoso/' + req.query.amount + '/' + req.query.currency);
 });
 
 router.post('/payment-failed', async (req, res) => {
   await checkoutController.pagoRechazado(req.body);
-  res.redirect('http://localhost:3000/pago-rechazado');
+  res.redirect('http://localhost:5000/pago-rechazado');
 });
 
 module.exports = router;
